@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/load.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script>
+        $(document).ready(function(){
+            showBlogSlides(slideIndex);
+            loadPoint();
+        });
+        $(window).resize(function() {
+            loadPoint();
+        });
+    </script>
+
+</head>
+
+<div w3-include-html="header.html"></div>
+<script>
+    w3.includeHTML();
+</script>
+
+<body>
+    <div class="blogBody">
+        <div class="popularPosts materialCard">
+            <div class="popularPostTexts">
+                <div class="popularPostsTopText blueFont">
+                    POPULAR POSTS
+                </div>
+                <img src="images/arrow_up.png" class="arrowUpImg">
+            </div>
+            <div class="blog-slideshow-container">
+                <div class="mySlides fade">
+                    <img src="images/pres3.png" class="blogCarouselImg">
+                    <img src="images/pres4.png" class="blogCarouselImg">
+                    <img src="images/pres1.png" class="blogCarouselImg">
+                    <img src="images/pres2.png" class="blogCarouselImg">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="images/pres2.png" class="blogCarouselImg">
+                    <img src="images/pres3.png" class="blogCarouselImg">
+                    <img src="images/pres1.png" class="blogCarouselImg">
+                    <img src="images/pres4.png" class="blogCarouselImg">
+                </div>
+            </div>
+
+            <div class="blogDots">
+                <span class="blogDot" onclick="currentBlogSlide(1)"></span>
+                <span class="blogDot" onclick="currentBlogSlide(2)"></span>
+            </div>
+        </div>
+
+        <div class="blogContentIcons">
+            <img src="images/grey_line_240.png" class="lineIcon">
+            <img src="images/behance.png" class="contentIcon">
+            <img src="images/behance.png" class="contentIcon">
+            <img src="images/behance.png" class="contentIcon">
+            <img src="images/behance.png" class="contentIcon">
+            <img src="images/behance.png" class="contentIcon">
+            <img src="images/behance.png" class="contentIcon">
+            <img src="images/behance.png" class="contentIcon">
+            <img src="images/grey_line_240.png" class="lineIcon">
+        </div>
+
+        <div class="timeline">
+            <div class="blogContent">
+                <div class="leftTimeLine">
+                    <div class="timeWrapper"></div>
+
+                    <div class="dateCircle">
+                        <div class="day">
+                            23
+                        </div>
+                        <div class="month">
+                            MAY
+                        </div>
+                    </div>
+                    <div class="typeCircle">
+                        <img src="images/gplus.png" class="typeCircleImgSize">
+                    </div>
+
+                    <div id="wrapper1"></div>
+
+                    <div class="dateCircle">
+                        <div class="day">
+                            23
+                        </div>
+                        <div class="month">
+                            MAY
+                        </div>
+                    </div>
+                    <div class="typeCircle">
+                        <img src="images/gplus.png" class="typeCircleImgSize">
+                    </div>
+
+                    <div id="wrapper2"></div>
+
+                    <div class="dateCircle">
+                        <div class="day">
+                            23
+                        </div>
+                        <div class="month">
+                            MAY
+                        </div>
+                    </div>
+                    <div class="typeCircle">
+                        <img src="images/gplus.png" class="typeCircleImgSize">
+                    </div>
+
+                    <div id="wrapper3"></div>
+
+                    <div class="dateCircle">
+                        <div class="day">
+                            23
+                        </div>
+                        <div class="month">
+                            MAY
+                        </div>
+                    </div>
+                    <div class="typeCircle">
+                        <img src="images/gplus.png" class="typeCircleImgSize">
+                    </div>
+
+                    <div id="wrapper4"></div>
+
+                    <div class="dateCircle">
+                        <div class="day">
+                            23
+                        </div>
+                        <div class="month">
+                            MAY
+                        </div>
+                    </div>
+                    <div class="typeCircle">
+                        <img src="images/gplus.png" class="typeCircleImgSize">
+                    </div>
+
+                    <div id="wrapper5"></div>
+
+                    <div class="dateCircle">
+                        <div class="day">
+                            23
+                        </div>
+                        <div class="month">
+                            MAY
+                        </div>
+                    </div>
+                    <div class="typeCircle">
+                        <img src="images/gplus.png" class="typeCircleImgSize">
+                    </div>
+
+                </div>
+                <div class="rightTimeLine">
+
+                    <div id="card1" class="blogCard materialCard">
+                        <img src="images/pres1.png" class="blogCardImg">
+                        <div class="blogCardHeader blueFont">
+                            What a beautiful scenery
+                        </div>
+                        <div class="blogCardSocial blueFont">
+                            Identity, Graphics design | <img src="images/mail.png" class="socialCardImage"> 24 Comments |<img src="images/mail.png" class="socialCardImage"> 4 Likes
+                        </div>
+                        <div class="blogCardSubHeader blueFont">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </div>
+                        <a href="#" type="button" class="blogButton">Read More</a>
+                    </div>
+
+                    <div id="card2" class="quotesCard">
+                        <div class="quotesOverlay">
+                            <div class="quotesTopText">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+                            </div>
+                            <div class="postQuote">
+                                <div class="quotesAuthor">
+                                    <img src="images/white_line_30.png">
+                                    Aegon Targaryen
+                                    <img src="images/white_line_30.png">
+                                </div>
+                                <img src="images/quote_white.png" class="quoteImg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="card3" class="blogCard materialCard">
+                        <div class="blogCardHeader blueFont">
+                            What a beautiful scenery
+                        </div>
+                        <div class="blogCardSocial blueFont">
+                            Identity, Graphics design | <img src="images/mail.png" class="socialCardImage"> 24 Comments |<img src="images/mail.png" class="socialCardImage"> 4 Likes
+                        </div>
+                        <div class="blogCardSubHeader blueFont">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </div>
+                        <a href="#" type="button" class="blogButton">Read More</a>
+                    </div>
+
+                    <div id="card4" class="blogCard materialCard">
+                        <img src="images/pres1.png" class="blogCardImg">
+                        <div class="blogCardHeader blueFont">
+                            What a beautiful scenery
+                        </div>
+                        <div class="blogCardSocial blueFont">
+                            Identity, Graphics design | <img src="images/mail.png" class="socialCardImage"> 24 Comments |<img src="images/mail.png" class="socialCardImage"> 4 Likes
+                        </div>
+                        <div class="blogCardSubHeader blueFont">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </div>
+                        <a href="#" type="button" class="blogButton">Read More</a>
+                    </div>
+
+                    <div id="card5" class="blogCard materialCard">
+                        <iframe src="https://player.vimeo.com/video/240289181" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <p><a href="https://vimeo.com/240289181"></a></p>
+                        <div class="blogCardHeader blueFont">
+                            What a beautiful scenery
+                        </div>
+                        <div class="blogCardSocial blueFont">
+                            Identity, Graphics design | <img src="images/mail.png" class="socialCardImage"> 24 Comments |<img src="images/mail.png" class="socialCardImage"> 4 Likes
+                        </div>
+                        <div class="blogCardSubHeader blueFont">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </div>
+                        <a href="#" type="button" class="blogButton">Read More</a>
+                    </div>
+
+                    <div id="card6" class="blogCard materialCard">
+                        <iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/336620437&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
+                        <div class="blogCardHeader blueFont">
+                            What a beautiful scenery
+                        </div>
+                        <div class="blogCardSocial blueFont">
+                            Identity, Graphics design | <img src="images/mail.png" class="socialCardImage"> 24 Comments |<img src="images/mail.png" class="socialCardImage"> 4 Likes
+                        </div>
+                        <div class="blogCardSubHeader blueFont">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </div>
+                        <a href="#" type="button" class="blogButton">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="blogSubMenu blueFont">
+                <div class="blogSidePost">
+                    <div class="blogRandomPostsTopText">
+                        Random Posts
+                    </div>
+                    <div class="blogRandomPostWrapper">
+                        <img src="images/pres1.png" class="blogRandomPostsImage">
+                        <img src="images/pres1.png" class="blogRandomPostsImage">
+                    </div>
+                    <div class="blogRandomPostWrapper">
+                        <img src="images/pres1.png" class="blogRandomPostsImage">
+                        <img src="images/pres1.png" class="blogRandomPostsImage">
+                    </div>
+                    <div class="blogRandomPostWrapper">
+                        <img src="images/pres1.png" class="blogRandomPostsImage">
+                        <img src="images/pres1.png" class="blogRandomPostsImage">
+                    </div>
+                </div>
+
+                <div class="blogSidePost">
+                    Search Posts
+                    <div class="newsletter">
+                        <input class="blogSearchInput blueFont" type="text" placeholder="Type to search" name="search"><br>
+                        <a href="#" type="button" class="blogSearchButton"><img src="images/arrow_right_white.png" id="righWhiteSearch"></a>
+                    </div>
+                </div>
+                <div class="blogSidePost">
+                    Categories
+                    <ul style="list-style-type:circle" class="categoriesListUl">
+                        <li><a href="#" class="categoriesList">Coffee</a></li>
+                        <li><a href="#" class="categoriesList">Coffee</a></li>
+                        <li><a href="#" class="categoriesList">Coffee</a></li>
+                        <li><a href="#" class="categoriesList">Coffee</a></li>
+                        <li><a href="#" class="categoriesList">Coffee</a></li>
+                        <li><a href="#" class="categoriesList">Coffee</a></li>
+                        <li><a href="#" class="categoriesList">Coffee</a></li>
+                    </ul>
+                </div>
+
+                <div class="blogSidePost">
+                    Archives
+                    <ul style="list-style-type:circle" class="categoriesListUl">
+                        <li><a href="#" class="categoriesList">Coffee</a></li>
+                        <li><a href="#" class="categoriesList">Coffee</a></li>
+                        <li><a href="#" class="categoriesList">Coffee</a></li>
+                        <li><a href="#" class="categoriesList">Coffee</a></li>
+                        <li><a href="#" class="categoriesList">Coffee</a></li>
+                        <li><a href="#" class="categoriesList">Coffee</a></li>
+                        <li><a href="#" class="categoriesList">Coffee</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="all blueFont">
+                    All archives
+                    <img src="images/arrow_right_blue.png" class="allArrow">
+                </a>
+
+                <div class="blogSidePost">
+                    Featured
+                    <div class="blogSideCard materialCard">
+                        <img src="images/pres1.png" class="blogCardImg">
+                        <div class="blogCardardTopText blueFont">
+                            Just dashboard
+                        </div>
+                        <div class="blogCardSubText blueFont">
+                            And subtext
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blogSidePost">
+                    Custom Text
+                    <div class="blogSideCustomText">
+                        This is emotional text. Please, if you read it, go to facebook, click on our page GYMIFY.io an give us a LIKE, thank you so much!
+                    </div>
+                    <div class="blogSideCustomText">
+                        Really! Go there and give us LIKE. Thank you again.
+                    </div>
+                </div>
+                <a href="index.html" class="all blueFont">
+                    Check out more
+                    <img src="images/arrow_right_blue.png" class="allArrow">
+                </a>
+
+                <div class="blogSidePost sideMenuEnd">
+                    Tags
+                    <div class="blogSideCustomText">
+                        <div class="smallTag">fitness</div>
+                        <div class="mediumTag">coding</div>
+                        <div class="largeTag">online</div>
+                        <div class="smallTag">trainer</div>
+                        <div class="mediumTag">online</div>
+                        <div class="largeTag">iad</div>
+                        <div class="smallTag">random</div>
+                        <div class="largeTag">offline</div>
+                        <div class="smallTag">trainer</div>
+                        <div class="mediumTag">online</div>
+                        <div class="smallTag">ide</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+<div w3-include-html="footer.html"></div>
+<script>
+    w3.includeHTML();
+</script>
+
+</html>

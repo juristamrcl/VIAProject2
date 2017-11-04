@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+
+    <!-- Material Design icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+
+    <!-- Your styles -->
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            showSlides(slideIndex);
+        });
+    </script>
+  </head>
+
+  <div w3-include-html="header.html"></div>
+  <script>
+      w3.includeHTML();
+  </script>
+
+
+  <body>
+
+    <div class="vision">
+      <div class="outerVisionContent">
+        <div class="visionTopText">
+          MADE FOR FITNESS ADDICTS
+        </div>
+        <div class="visionSubText">
+          Make your own online fitness portfolio where you can share your fitness progress just using our GYMIFY features. Everything for FREE.
+        </div>
+        <a href="#" type="button" class="exploreButton">GET STARTED NOW</a>
+      </div>
+    </div>
+
+    <div class="whyUs">
+      <div class="bodyTopText">
+        Beautiful.Clean.Responsive
+      </div>
+      <div class="bodySubText">
+        GYMIFY is a hight quality solution for those, who want a beautiful website in no time. It is fully responsive and it will adapt itself to any device.
+        Your content will always look beautiful.
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <img src="images/heart.png" class="featureImg">
+        <div class="featureTexts blueFont">
+          <div class="featureTopText blueFont">
+            Passion
+          </div>
+          <div>
+            All the features in our web are made with passion and interrest. All of our programmers are interrested in fitness and healthy livestyle
+            so we know, what we are doing.
+          </div>
+        </div>
+      </div>
+      <div class="feature">
+        <img src="images/bulb.png" class="featureImg">
+        <div class="featureTexts blueFont">
+          <div class="featureTopText blueFont">
+            Creativity
+          </div>
+          <div>
+            Living in a world full of great ideas and superb inventions is easier, but not for all. Here comes the creative and talented ones, creating
+            fitness portfolio for not ordinary people.
+          </div>
+        </div>
+      </div>
+      <div class="feature">
+        <img src="images/star.png" class="featureImg">
+        <div class="featureTexts blueFont">
+          <div class="featureTopText blueFont">
+            Quality
+          </div>
+          <div>
+            We do all the stuff witch extreme precision and we focus on detail. Every part of our web has to be just perfect. If you don´t believe in us,
+            just try our service for free.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="latestWorks">
+      <div class="latestTexts">
+        <div class="bodyTopText">
+          Check out our latest works
+        </div>
+        <div class="bodySubText">
+          Motivate yourself to write another great blog to our community
+        </div>
+        <div class="latestWorksCards">
+          <div class="card materialCard">
+            <img src="images/pres1.png" class="cardImg">
+            <div class="cardTopText blueFont">
+              I do not know what to write here, it is just a text
+            </div>
+            <div class="cardSubText blueFont">
+              And it´s subtext
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/pres2.png" class="cardImg">
+            <div class="cardTopText blueFont">
+              I do not know what to write here, it is just a text
+            </div>
+            <div class="cardSubText blueFont">
+              And it´s subtext
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="images/pres3.png" class="carouselImg">
+        <img src="images/pres1.png" class="carouselImg">
+        <img src="images/pres2.png" class="carouselImg">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/pres2.png" class="carouselImg">
+        <img src="images/pres3.png" class="carouselImg">
+        <img src="images/pres1.png" class="carouselImg">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/pres1.png" class="carouselImg">
+        <img src="images/pres2.png" class="carouselImg">
+        <img src="images/pres3.png" class="carouselImg">
+      </div>
+    </div>
+
+    <div class="dots">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <div class="workWithUs">
+      <div class="latestTexts">
+        <div class="bodyTopText">
+          Want to work with us?
+        </div>
+        <div class="bodySubText">
+          Just click on the button below an contact us. Simple as all website.
+        </div>
+        <a href="#" type="button" class="exploreButton">GET IN TOUCH</a>
+      </div>
+    </div>
+  </body>
+
+  <div w3-include-html="footer.html"></div>
+  <script>
+      w3.includeHTML();
+  </script>
+</html>
