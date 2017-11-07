@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/modal.js"></script>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<div w3-include-html="header.html"></div>
+<script>
+    w3.includeHTML();
+</script>
+
+<body>
+    <div class="galleryMainDiv">
+        <div class="colorOverlay">
+            <div class="galleryTexts">
+                <div class="getInTouchTopText">
+                    Do you want to see or works?
+                </div>
+                <div class="getInTouchSubText">
+                    Take a look at these wonderful pictures!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="galleryPhotos">
+        <div class="galleryRow">
+            <div class="imgWrapper">
+                <span class="mainText">Girl in the trees</span>
+                <img id="img1" src="images/sceneries/pres5.jpeg" alt="Girl in the trees" onclick="setModal(this)" class="galleryPic">
+            </div>
+            <div class="imgWrapper">
+                <span class="mainText">Winter is Beautyful</span>
+                <img id="img2" src="images/sceneries/pres6.jpeg" alt="Winter is Beautyful" onclick="setModal(this)" class="galleryPic">
+            </div>
+            <div class="imgWrapper">
+                <span class="mainText">Lady in the grass</span>
+                <img id="img3" src="images/sceneries/pres7.jpeg" alt="Lady in the grass" onclick="setModal(this)" class="galleryPic">
+            </div>
+        </div>
+        <div class="galleryRow">
+            <div class="imgWrapper">
+                <span class="mainText">What a wonderful view</span>
+                <img id="img4" src="images/sceneries/pres8.jpg" alt="What a wonderful view" onclick="setModal(this)" class="galleryPic">
+            </div>
+            <div class="imgWrapper">
+                <span class="mainText">Wild waves</span>
+                <img id="img5" src="images/sceneries/pres9.jpeg" alt="Wild waves" onclick="setModal(this)" class="galleryPic">
+            </div>
+            <div class="imgWrapper">
+                <span class="mainText">Calm sea, boat</span>
+                <img id="img6" src="images/sceneries/pres10.jpg" alt="Calm sea, boat" onclick="setModal(this)" class="galleryPic">
+            </div>
+        </div>
+        <div class="galleryRow">
+            <div class="imgWrapper">
+                <span class="mainText">Top of the mountain</span>
+                <img id="img7" src="images/sceneries/pres11.jpeg" alt="Top of the mountain" onclick="setModal(this)" class="galleryPic">
+            </div>
+            <div class="imgWrapper">
+                <span class="mainText">Winter is beautiful II</span>
+                <img id="img8" src="images/sceneries/pres12.jpeg" alt="Winter is beautiful II" onclick="setModal(this)" class="galleryPic">
+            </div>
+            <div class="imgWrapper">
+                <span class="mainText">Snow on the trees</span>
+                <img id="img9" src="images/sceneries/pres13.jpg" alt="Snow on the trees" onclick="setModal(this)" class="galleryPic">
+            </div>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="imgModal">
+        <div id="caption"></div>
+    </div>
+</body>
+
+<div w3-include-html="footer.html"></div>
+<script>
+    w3.includeHTML();
+</script>
+
+</html>

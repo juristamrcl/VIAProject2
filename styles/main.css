@@ -1,5 +1,12 @@
 body{
   font-family: "Open Sans";
+  width: 100%;
+  height: auto;
+  margin: 0 0 0 0;
+}
+
+header{
+  width: 100%;
 }
 
 .blueFont{
@@ -18,24 +25,47 @@ body{
 }
 
 .contact{
-  width: auto;
+  width: 85%;
   display: flex;
-  margin-right: 550px;
+  position: absolute;
 }
 
 .contactItem{
-  display: inline-block;
+  display: flex;
+  height: 100%;
+  align-items: center;
   font-size: 0.8em;
   margin-right: 20px;
 }
 
+.firstContactItem{
+  left: 15%;
+}
+
 .contactImage{
   height: 15px;
+  margin-right: 7px;
 }
 
 .socialItems{
   display: flex;
+  display: flex;
+  position: absolute;
+  right: 15%;
 }
+
+@media (max-width: 700px){
+  .socialItems, .headerDistract{
+    display: none;
+  }
+  .contact{
+    left: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 
 .socialItem{
   display: inline-block;
@@ -46,15 +76,16 @@ body{
   height: 15px;
 }
 nav{
-  font-family: "Open Sans";
-  height: 100px;
-  width: auto;
   display: flex;
+  font-family: "Open Sans";
+  min-height: 100px;
+  width: 100%;
   justify-content: center;
   align-items: center;
 }
 
 .logo{
+  display: inline-block;
   margin-right: 80px;
   font-weight: bold;
   font-size: 2.3em;
@@ -65,6 +96,39 @@ nav{
   display: inline-block;
   height: 20px;
   margin-right: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.8em;
+  font-family: "Open Sans";
+  color: #506A85;
+}
+
+@media (max-width: 900px){
+  .logo{
+    display: none;
+  }
+  .menuLinks{
+    font-size: 0.7em;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 500px){
+  .logo{
+    display: none;
+  }
+  .menuLinks{
+    font-size: 0.6em;
+    margin-right: 10px;
+  }
+}
+@media (max-width: 400px){
+  .logo{
+    display: none;
+  }
+  .menuLinks{
+    font-size: 0.5em;
+    margin-right: 10px;
+  }
 }
 
 a{
@@ -76,8 +140,20 @@ a{
 }
 
 .search{
-  display: flex;
+  display: inline-block;
+  width: 90px;
   justify-content: flex-end;
+  align-items: center;
+}
+@media (max-width: 600px){
+  .search{
+    display: none;
+  }
+}
+
+.searchWrapper{
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -85,13 +161,13 @@ a{
   display: inline-block;
   height: 12px;
   right: 0;
+  cursor: pointer;
 }
 .topHeaderInput{
   display: inline-block;
-  width: 100px;
+  width: 90px;
   background: white;
   border: none;
-  border-bottom: 0.5px solid #8898A5;
   color: #4D5D6D;
   margin-right: 5px;
   font-family: "Open Sans";
@@ -105,12 +181,9 @@ input[type="text"], input[type="password"], textarea, select {
   display: flex;
   width: auto;
   height: 500px;
-  background: url("../images/background.png");
   background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-
+  background: url("../images/background.jpg") no-repeat fixed center;
+  background-size: cover;
 
   justify-content: center;
   align-items: center;
@@ -135,7 +208,7 @@ input[type="text"], input[type="password"], textarea, select {
 
 .visionSubText{
   display: block;
-  width: 700px;
+  max-width: 700px;
   font-size: 1em;
   color: #F2F2F2;
   margin-top: 30px;
@@ -166,13 +239,14 @@ input[type="text"], input[type="password"], textarea, select {
   font-size: 2.5em;
   color: #506A85;
   text-align: center;
+  max-width: 700px;
 }
 .bodySubText{
   display: inline-block;
   margin-top: 30px;
   font-size: 1em;
   color: #506A85;
-  width: 700px;
+  max-width: 700px;
   text-align: center;
 }
 
@@ -186,8 +260,13 @@ input[type="text"], input[type="password"], textarea, select {
 
 .feature{
   display: inline-block;
-  width: 310px;
+  max-width: 310px;
   margin-left: 40px;
+}
+@media (max-width: 900px) {
+  .features{
+    flex-direction: column;
+  }
 }
 
 .featureTexts{
@@ -235,7 +314,7 @@ input[type="text"], input[type="password"], textarea, select {
 .subFooter{
   display: flex;
   background: #293646;
-  height: 55px;
+  min-height: 55px;
   justify-content: center;
   align-items: center;
   color: #5B6878;
@@ -243,10 +322,33 @@ input[type="text"], input[type="password"], textarea, select {
   font-weight: bold;
 }
 
+.subFooterDotImg{
+  display: inline-block;
+  margin-bottom: 3px;
+}
+
 .subFooterCopyright{
   display: inline-block;
-  margin-right: 525px;
+  position: absolute;
+  left: 15%;
+  width: auto;
 }
+.subFooterMenu{
+  position: absolute;
+  right: 15%;
+}
+@media (max-width: 700px) {
+  .subFooter{
+    flex-direction: column;
+  }
+  .subFooterCopyright, .subFooterMenu{
+    left: 0;
+    position: relative;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+  }
+}
+
 .subFooterMenuItem{
   display: inline-block;
   margin-right: 4px;
@@ -259,17 +361,21 @@ input[type="text"], input[type="password"], textarea, select {
 .footer{
   display: flex;
   background: #2F4052;
-  height: 250px;
+  min-height: 280px;
   justify-content: center;
 
   color: #A4B1C0;
 }
+@media (max-width: 800px) {
+  .footer{
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 .footerMainItem{
   display: flex;
-  margin-top: 40px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 20px;
   flex-direction: column;
   width: 200px;
 }
@@ -294,10 +400,12 @@ input[type="text"], input[type="password"], textarea, select {
   font-size: 0.8em;
 }
 .moreAboutUsFooter{
+  display: flex;
   margin-top: 10px;
   font-weight: bold;
   font-size: 0.9em;
   color: #A4B1C0;
+  align-items: center;
 }
 .arrowFooter{
   height: 12px;
@@ -331,7 +439,7 @@ input[type="text"], input[type="password"], textarea, select {
   display: flex;
   margin-top: 10px;
 }
-.newsletterInput{
+#newsletterInput{
   display: inline-block;
   width: 130px;
   background: #4D5D6D;
@@ -350,6 +458,7 @@ input[type="text"], input[type="password"], textarea, select {
   text-align: center;
   padding-top: 8px;
   color: white;
+  cursor: pointer;
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #A4B1C0;
@@ -361,10 +470,15 @@ input[type="text"], input[type="password"], textarea, select {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 900px) {
+  .latestWorksCards{
+    flex-direction: column;
+  }
+}
 .card{
   background: white;
   display: inline-block;
-  width: 400px;
+  max-width: 400px;
   margin: 50px 10px 50px 10px;
 }
 
@@ -384,8 +498,27 @@ input[type="text"], input[type="password"], textarea, select {
 }
 .cardImg{
   display: inline-block;
-  width: 400px;
-  height: 250px;
+  max-width: 400px;
+  max-height: 250px;
+}
+
+.carouselImg{
+  display: inline-block;
+  height: 150px;
+  margin: 0 10px 10px 10px;
+  width: auto;
+}
+
+@media (max-width: 1100px) {
+  #indexSlides {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 400px) {
+  .cardImg, .carouselImg{
+    width: 300px;
+  }
 }
 
 /* Slideshow container */
@@ -428,7 +561,7 @@ input[type="text"], input[type="password"], textarea, select {
   display: inline-block;
   transition: background-color 0.6s ease;
 }
-.blogDots{
+#blogDots{
   text-align:center;
   background-color: white;
 }
@@ -455,18 +588,12 @@ input[type="text"], input[type="password"], textarea, select {
   to {opacity: 1}
 }
 
-.carouselImg{
-  height: 150px;
-  margin: 0 10px 0 10px;
-  width: auto;
-}
-
 /* contact.html*/
 .getInTouch{
   display: flex;
   width: auto;
   height: 300px;
-  background: url("../images/touch.png") no-repeat fixed bottom;
+  background: url("../images/touch.jpg") no-repeat fixed bottom;
   background-size: cover;
 
   justify-content: center;
@@ -479,18 +606,27 @@ input[type="text"], input[type="password"], textarea, select {
   justify-content: center;
   align-items: center;
   margin-right: 200px;
+  padding-top: 20px;
 }
 .getInTouchTopText{
   display: inline-block;
   font-size: 4em;
+  text-align: center;
   color: white;
   font-weight: bold;
+}
+@media (max-width: 500px) {
+  .getInTouchTopText{
+    font-size: 1.6em;
+    margin-top: -50px;
+  }
 
 }
 .getInTouchSubText{
   display: inline-block;
-  margin-top: 30px;
+  margin: 30px 0 0 0;
   font-size: 0.9em;
+  text-align: center;
   color: #F2F2F2;
 }
 
@@ -511,8 +647,9 @@ input[type="text"], input[type="password"], textarea, select {
 .colorOverlay{
   display: flex;
   width: 100%;
-  height: 300px;
-  background: rgba(47, 64, 82, 0.9);
+  min-height: 300px;
+  height: 100%;
+  background: rgba(47, 64, 82, 0.85);
   justify-content: center;
   align-items: center;
 }
@@ -523,18 +660,58 @@ input[type="text"], input[type="password"], textarea, select {
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
-
 }
+
 .contactTopText{
   font-size: 1.7em;
   font-weight: bold;
   margin:80px 0 20px 0;
 }
+
+#sendMessageAgainButton{
+  display: none;
+}
 .contactFormular{
+  padding-left: 10px;
   display:flex;
   flex-direction: column;
 }
+.contactProfiles{
+  display: flex;
+  width: 270px;
+  height: 400px;
+  background: #F2F5F7;
+  margin: 80px 0 20px 80px;
+  flex-direction: column;
+  align-items: center;
+}
 
+@media (max-width: 1000px) {
+  #contactForm{
+    flex-direction: column;
+  }
+  .getInTouchTexts{
+    margin: 0 0 20px 0;
+  }
+  .getInTouchSubText{
+    margin-top: 10px;
+  }
+  .contactProfiles{
+    margin: 70px 0 20px 70px;
+  }
+}
+
+@media (max-width: 850px) {
+  .contactView{
+    flex-direction: column;
+  }
+  #contactTextArea{
+    max-width: 300px;
+  }
+  .contactProfiles{
+    margin: 20px 0 20px 0;
+  }
+}
 .contactFormShort{
   width: 200px;
   height: 25px;
@@ -552,26 +729,20 @@ input[type="text"], input[type="password"], textarea, select {
   align-self: flex-start;
   margin-bottom: 20px;
   font-family: "Open Sans";
+  min-height: 70px;
 }
 .contactSubmitButton{
   display: inline-block;
   width: 130px;
   height: 25px;
   background: #00BC9C;
+  font-size: 0.8em;
   text-align: center;
   padding: 8px 0 3px 0;
   color: white;
+  cursor: pointer;
 }
 
-.contactProfiles{
-  display: flex;
-  width: 270px;
-  height: 400px;
-  background: #F2F5F7;
-  margin: 80px 0 20px 80px;
-  flex-direction: column;
-  align-items: center;
-}
 .contactNames{
   width: 90%;
   margin: 30px 0 10px 0;
@@ -602,7 +773,7 @@ input[type="text"], input[type="password"], textarea, select {
 }
 .contactCardTopText{
   margin-top: 5px;
-  font-size: 0.8em;
+  font-size: 0.7em;
   font-weight: bold;
   text-align: center;
 }
@@ -626,10 +797,11 @@ input[type="text"], input[type="password"], textarea, select {
 .popularPosts{
   display: flex;
   justify-content: center;
-  width: 1000px;
-  height: 230px;
+  max-width: 1000px;
+  min-width: 800px;
+  height: auto;
   background-color: white;
-  margin: 60px 0 50px 0;
+  margin: 60px 0 0 0;
   flex-direction: column;
 }
 .popularPostTexts{
@@ -639,24 +811,35 @@ input[type="text"], input[type="password"], textarea, select {
   width: 100%;
   height: 50px;
   border-bottom: solid 1px #E0E6EB;
+  cursor: pointer;
+  position: relative;
 }
 .popularPostsTopText{
   display: inline-block;
   font-size: 0.9em;
   font-weight: bold;
-  margin: 0 850px 0 0;
+  position: absolute;
+  left: 20px;
+}
+@media (max-width: 1100px) {
+  .popularPosts{
+    display: none;
+  }
 }
 .arrowUpImg{
   display: inline-block;
+  position: absolute;
+  right: 20px;
   width: 15px;
   height: 15px;
+  cursor: pointer;
 }
 .blogCarouselImg{
   height: 100px;
   margin: 0 10px 0 10px;
   width: auto;
 }
-.blog-slideshow-container {
+#blog-slideshow-container {
   width: 100%;
   height: 140px;
   display: flex;
@@ -671,10 +854,24 @@ input[type="text"], input[type="password"], textarea, select {
   align-items: center;
   width: 80%;
   height: 40px;
+  margin-top: 50px;
 }
 .contentIcon{
   display: inline-block;
   margin: 0 25px 0 25px;
+}
+@media (max-width: 700px){
+  .contentIcon{
+    width: 20px;
+    margin: 0 15px 0 15px;
+  }
+}
+
+@media (max-width: 400px){
+  .contentIcon{
+    width: 15px;
+    margin: 0 10px 0 10px;
+  }
 }
 .lineIcon{
   display: inline-block;
@@ -699,6 +896,11 @@ input[type="text"], input[type="password"], textarea, select {
   width: 25%;
   height: auto;
 }
+@media (max-width: 1000px) {
+  .blogSubMenu{
+    width: 80%;
+  }
+}
 
 .blogSidePost{
   display: flex;
@@ -707,6 +909,7 @@ input[type="text"], input[type="password"], textarea, select {
   font-size: 1em;
   text-align: left;
   margin: 40px 0 0 0;
+  cursor: pointer;
 }
 .blogRandomPostWrapper{
   display: inline-block;
@@ -717,6 +920,7 @@ input[type="text"], input[type="password"], textarea, select {
   width: 110px;
   height: 70px;
   margin: 4px 2px 4px 2px;
+  cursor: pointer;
 }
 
 .blogRandomPostsTopText{
@@ -752,6 +956,7 @@ input[type="text"], input[type="password"], textarea, select {
 
 .blogSideCard{
   margin-top: 15px;
+  background-color: #fff;
   width: 80%;
 }
 .blogCardImg{
@@ -770,14 +975,19 @@ input[type="text"], input[type="password"], textarea, select {
 .all{
   font-size: 0.9em;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 .allArrow{
   width: 15px;
+  height: 15px;
 }
 .blogSideCustomText{
   margin: 10px 0 10px 0;
   width: 80%;
   font-size: 0.8em;
+  font-weight: normal;
 }
 
 .sideMenuEnd{
@@ -802,30 +1012,31 @@ input[type="text"], input[type="password"], textarea, select {
   height: auto;
 }
 .leftTimeLine{
-  display: flex;flex-direction: column;
+  display: flex;
+  flex-direction: column;
   position: relative;
   width: 50px;
   height: auto;
-  margin-right: 50px;
 }
 .rightTimeLine{
   display: flex;
   flex-direction: column;
-  width: auto;
+  width: 100%;
   height: auto;
   padding-right: 50px;
+  margin-left: 50px;
 }
 
 .blogCard{
   display: inline-block;
-  width: 100%;
+  max-width: 100%;
   margin-bottom: 40px;
   height: auto;
   background-color: white;
   padding-bottom: 40px;
 }
 blogCardImg{
-  width: 100%;
+  max-width: 600px;
 }
 
 #righWhiteSearch{
@@ -835,17 +1046,18 @@ blogCardImg{
 .blogCardHeader{
   font-size: 2.5em;
   font-weight: bold;
-  margin: 40px 0 0 40px;
+  margin: 40px 40px 0 40px;
 }
 .blogCardSocial{
-  display: flex;
+  display: inline-block;
   font-size: 0.8em;
-  margin: 15px 0 0 40px;
+  margin: 15px 40px 0 40px;
   align-items: center;
 }
+
 .blogCardSubHeader{
   font-size: 1em;
-  margin: 10px 0 0 40px;
+  margin: 10px 40px 0 40px;
 }
 .socialCardImage{
   margin: 0 5px 0 5px;
@@ -862,11 +1074,40 @@ blogCardImg{
   margin: 20px 0 0 40px;
 }
 
+
+@media (max-width: 1000px){
+  .lineIcon{
+    display: none;
+  }
+  .timeline{
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .rightTimeLine{
+    padding-right: 0;
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 550px){
+  .leftTimeLine{
+    display: none;
+  }
+  .rightTimeLine{
+    padding-right: 0;
+    margin-left: 0;
+  }
+  .blogCardHeader{
+    font-size: 1.2em;
+  }
+}
+
 .quotesCard{
   display: inline-block;
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  background: url("../images/background.png") center no-repeat;
+  background: url("../images/background.jpg") center no-repeat;
   margin: 0 0 40px 0;
 }
 .quotesOverlay{
@@ -879,25 +1120,36 @@ blogCardImg{
   display: inline-block;
   font-size: 1.2em;
   font-style: italic;
-  margin: 40px 0 20px 40px;
+  margin: 40px 40px 20px 40px;
   color: white;
 }
 .postQuote{
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   margin-bottom: 40px;
 }
 .quotesAuthor{
   display: inline-block;
+  position: absolute;
+  left: 10px;
   font-size: 0.8em;
   font-style: italic;
-  margin: 0 300px 0 0;
   color: white;
 }
 .quoteImg{
   display: inline-block;
+  position: absolute;
+  right: 10px;
   width: 50px;
+}
+
+.quoteImgLine{
+  display: inline-block;
+  height: 1px;
+  width: auto;
+  margin-bottom: 3px;
 }
 
 .dateCircle{
@@ -941,4 +1193,208 @@ blogCardImg{
 .month{
   font-size: 0.7em;
   margin-top: -5px;
+}
+
+/* image gallery modal */
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+/* gallery */
+.galleryTexts{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.galleryMainDiv{
+  display: flex;
+  width: auto;
+  min-height: 200px;
+  background: url("../images/background2.jpeg") no-repeat fixed bottom;
+  background-size: cover;
+
+  justify-content: center;
+  align-items: center;
+}
+.galleryPhotos{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  padding: 70px 0 70px 0;
+  align-items: center;
+  justify-content: center;
+}
+.galleryRow{
+  display: flex;
+  width: 80%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1000px) {
+  .galleryRow{
+    flex-direction: column;
+  }
+}
+.galleryPic{
+  width: 300px;
+  height: 150px;
+  margin: 10px 10px 10px 10px;
+  cursor: pointer;
+}
+.imgWrapper{
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+.mainText{
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 10px 0 0 10px;
+}
+
+/* timeout */
+
+#timeoutModal {
+  display: flex;
+  flex-direction: column;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+
+  align-items: center;
+  justify-content: center;
+}
+#countdown{
+  display: inline-block;
+  font-size: 3em;
+  font-weight: bold;
+  color: white;
+  margin-top: -200px;
+}
+.timeoutVision{
+  display: flex;
+  width: auto;
+  min-height: 500px;
+  background-size: cover;
+  background: url("../images/background.jpg") no-repeat center;
+  justify-content: center;
+  align-items: center;
+}
+#getInModalButton{
+  display: none;
+}
+
+/* dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  background: #fff;
+  position: absolute;
+  width: auto;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 10;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }

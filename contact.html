@@ -2,45 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
 
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
 
     <script type="text/javascript">
         // When the window has finished loading create our google map below
         google.maps.event.addDomListener(window, 'load', init);
-
-        function init() {
-            // Basic options for a simple Google Map
-            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-            var mapOptions = {
-                // How zoomed in you want the map to start at (always required)
-                zoom: 11,
-
-                // The latitude and longitude to center the map (always required)
-                center: new google.maps.LatLng(49.820923, 18.262524),
-
-                // How you would like to style the map.
-                // This is where you would paste any style found on Snazzy Maps.
-                styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]
-            };
-
-            // Get the HTML DOM element that will contain your map
-            // We are using a div with id="map" seen below in the <body>
-            var mapElement = document.getElementById('map');
-
-            // Create the Google Map using our element and options defined above
-            var map = new google.maps.Map(mapElement, mapOptions);
-
-            // Let's also add a marker while we're at it
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(49.820923, 18.262524),
-                map: map,
-                title: 'Map'
-            });
-        }
     </script>
 
     <link rel="stylesheet" href="styles/main.css">
@@ -55,7 +27,7 @@
     <div id="map"></div>
 
     <div class="getInTouch">
-        <div class="colorOverlay">
+        <div class="colorOverlay" id="contactForm">
             <div class="getInTouchTexts">
                 <div class="getInTouchTopText">
                     GET IN TOUCH
@@ -66,7 +38,7 @@
             </div>
             <div class="getInTouchContact">
                 <div class="getInTouchCompanyName">
-                    GYMIFY
+                    SNAPin
                 </div>
                 <div class="getInTouchContactItems">
                     <div class="getInTouchContactItem">
@@ -87,14 +59,15 @@
     </div>
     <div class="contactView blueFont">
         <div class="contactFormular">
-            <div class="contactTopText">
-                Leave a Message
+            <div id="leaveMessage" class="contactTopText">
+                Leave a message
             </div>
-            <input class="contactFormShort blueFont" type="text" placeholder="Name (Required)" height="26px"  name="name"><br>
-            <input class="contactFormShort blueFont" type="text" placeholder="Email (Required)" height="26px"  name="mail"><br>
-            <input class="contactFormShort blueFont" type="text" placeholder="Subject" height="26px"  name="subject"><br>
-            <textarea class="contactFormLong blueFont" rows="4" cols="50" placeholder="Enter your message..."></textarea>
-            <a href="#" type="button" class="contactSubmitButton">SUBMIT MESSAGE</a>
+            <div onclick="sendAnotherMessage()" id="sendMessageAgainButton" type="button" class="contactSubmitButton materialCard">SEND ANOTHER</div>
+            <input id="contactName" class="contactFormShort blueFont" type="text" placeholder="Name (Required)" height="26px"><br>
+            <input id="contactMail" class="contactFormShort blueFont" type="text" placeholder="Email (Required)" height="26px"><br>
+            <input id="contactSubject" class="contactFormShort blueFont" type="text" placeholder="Subject" height="26px"><br>
+            <textarea id="contactTextArea" class="contactFormLong blueFont" rows="4" cols="50" placeholder="Enter your message..."></textarea>
+            <div onclick="submitMessage()" type="button" id="contactSendMessageButton" class="contactSubmitButton materialCard">SUBMIT MESSAGE</div>
         </div>
         <div class="contactProfiles">
             <div class="contactNames blueFont">
@@ -104,41 +77,41 @@
             </div>
             <div class="contactPhotos">
                 <div class="contactCard materialCard">
-                    <img src="images/person1.png" class="contactCardImg">
+                    <img src="images/person1.jpeg" class="contactCardImg">
                     <div class="contactCardTopText blueFont">
-                        Johnathan Doe
+                        Ramsey Bolt
                     </div>
                     <div class="contactCardSubText blueFont">
                         Creative Director
                     </div>
                 </div>
                 <div class="contactCard materialCard">
-                    <img src="images/person1.png" class="contactCardImg">
+                    <img src="images/person2.jpeg" class="contactCardImg">
                     <div class="contactCardTopText blueFont">
-                        Johnathan Doe
+                        Aegon Targrayen
                     </div>
                     <div class="contactCardSubText blueFont">
-                        Creative Director
+                        Marketing Director
                     </div>
                 </div>
             </div>
             <div class="contactPhotos">
                 <div class="contactCard materialCard">
-                    <img src="images/person2.png" class="contactCardImg">
+                    <img src="images/person3.jpeg" class="contactCardImg">
                     <div class="contactCardTopText blueFont">
-                        Johnathan Doe
+                        Stann Baratheon
                     </div>
                     <div class="contactCardSubText blueFont">
-                        Creative Director
+                        Technical Director
                     </div>
                 </div>
                 <div class="contactCard materialCard">
-                    <img src="images/person1.png" class="contactCardImg">
+                    <img src="images/person4.jpeg" class="contactCardImg">
                     <div class="contactCardTopText blueFont">
-                        Johnathan Doe
+                        Theon Rayjoy
                     </div>
                     <div class="contactCardSubText blueFont">
-                        Creative Director
+                        Senior Designer
                     </div>
                 </div>
             </div>

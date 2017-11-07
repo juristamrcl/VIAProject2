@@ -10,49 +10,47 @@
     <!-- Material Design icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-
-    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
-
     <!-- Your styles -->
     <link rel="stylesheet" href="styles/main.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
     <script src="https://www.w3schools.com/lib/w3.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script>
         $(document).ready(function(){
-            showSlides(slideIndex);
+            showSlides(slideIndex, 'dot');
         });
     </script>
   </head>
 
   <div w3-include-html="header.html"></div>
   <script>
-      w3.includeHTML();
+      //w3.includeHTML();
   </script>
 
 
   <body>
 
     <div class="vision">
-      <div class="outerVisionContent">
-        <div class="visionTopText">
-          MADE FOR FITNESS ADDICTS
+      <div class="colorOverlay">
+        <div class="outerVisionContent">
+          <div class="visionTopText">
+            MADE FOR PHOTO ADDICTS
+          </div>
+          <div class="visionSubText">
+            Are you a photographer and you want your own blog? Using SnapIn is as simple as clicking on the button below. Just try it!
+          </div>
+          <a href="#" type="button" class="exploreButton">GET STARTED NOW</a>
         </div>
-        <div class="visionSubText">
-          Make your own online fitness portfolio where you can share your fitness progress just using our GYMIFY features. Everything for FREE.
-        </div>
-        <a href="#" type="button" class="exploreButton">GET STARTED NOW</a>
       </div>
     </div>
 
     <div class="whyUs">
       <div class="bodyTopText">
-        Beautiful.Clean.Responsive
+        Beautiful. Clean. Responsive
       </div>
       <div class="bodySubText">
-        GYMIFY is a hight quality solution for those, who want a beautiful website in no time. It is fully responsive and it will adapt itself to any device.
+        SNAPin is a hight quality solution for those, who want a beautiful website in a less time. It is fully responsive and it will adapt itself to any device.
         Your content will always look beautiful.
       </div>
     </div>
@@ -65,7 +63,7 @@
             Passion
           </div>
           <div>
-            All the features in our web are made with passion and interrest. All of our programmers are interrested in fitness and healthy livestyle
+            All the features in our web are made with passion and interrest. All of our programmers are interrested in photography and beautiful sceneries
             so we know, what we are doing.
           </div>
         </div>
@@ -78,7 +76,7 @@
           </div>
           <div>
             Living in a world full of great ideas and superb inventions is easier, but not for all. Here comes the creative and talented ones, creating
-            fitness portfolio for not ordinary people.
+            portfolio for not ordinary people.
           </div>
         </div>
       </div>
@@ -106,21 +104,21 @@
         </div>
         <div class="latestWorksCards">
           <div class="card materialCard">
-            <img src="images/pres1.png" class="cardImg">
+            <img src="images/sceneries/pres1.jpeg" class="cardImg">
             <div class="cardTopText blueFont">
-              I do not know what to write here, it is just a text
+              Climbing experience
             </div>
             <div class="cardSubText blueFont">
-              And it´s subtext
+              Mountains are wonderful in every part of the year
             </div>
           </div>
-          <div class="card">
-            <img src="images/pres2.png" class="cardImg">
+          <div class="card materialCard">
+            <img src="images/sceneries/pres2.jpeg" class="cardImg">
             <div class="cardTopText blueFont">
-              I do not know what to write here, it is just a text
+              Is HDR future?
             </div>
             <div class="cardSubText blueFont">
-              And it´s subtext
+              We´ve been comparing HDR and ordinary photos
             </div>
           </div>
         </div>
@@ -128,29 +126,29 @@
     </div>
 
     <div class="slideshow-container">
-      <div class="mySlides fade">
-        <img src="images/pres3.png" class="carouselImg">
-        <img src="images/pres1.png" class="carouselImg">
-        <img src="images/pres2.png" class="carouselImg">
+      <div id="indexSlides" class="mySlides fade">
+        <img src="images/sceneries/scenery1.jpeg" class="carouselImg">
+        <img src="images/sceneries/scenery3.jpeg" class="carouselImg">
+        <img src="images/sceneries/scenery2.jpg" class="carouselImg">
       </div>
 
       <div class="mySlides fade">
-        <img src="images/pres2.png" class="carouselImg">
-        <img src="images/pres3.png" class="carouselImg">
-        <img src="images/pres1.png" class="carouselImg">
+        <img src="images/sceneries/scenery4.jpg" class="carouselImg">
+        <img src="images/sceneries/scenery5.jpeg" class="carouselImg">
+        <img src="images/sceneries/scenery6.jpeg" class="carouselImg">
       </div>
 
       <div class="mySlides fade">
-        <img src="images/pres1.png" class="carouselImg">
-        <img src="images/pres2.png" class="carouselImg">
-        <img src="images/pres3.png" class="carouselImg">
+        <img src="images/sceneries/scenery7.jpeg" class="carouselImg">
+        <img src="images/sceneries/scenery8.jpeg" class="carouselImg">
+        <img src="images/sceneries/scenery9.jpeg" class="carouselImg">
       </div>
     </div>
 
     <div class="dots">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(1, 'dot')"></span>
+      <span class="dot" onclick="currentSlide(2, 'dot')"></span>
+      <span class="dot" onclick="currentSlide(3, 'dot')"></span>
     </div>
 
     <div class="workWithUs">

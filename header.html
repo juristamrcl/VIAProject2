@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <header>
         <div class="topNav">
-            <div class="contact">
+            <div class="contact firstContactItem">
                 <div class="contactItem">
                     <img src="images/mail.png" class="contactImage">
                     support@gymify.io
@@ -47,14 +47,18 @@
 
         <nav class="materialCard">
             <div class="logo">
-                <a href="index.html">GYMIFY</a>
+                <a href="index.html">SNAPin</a>
             </div>
             <a href="index.html" class="menuLinks">
                 HOME
             </a>
-            <a href="#" class="menuLinks">
+            <div class="menuLinks dropdown">
                 PORTFOLIO
-            </a>
+                <div class="dropdown-content">
+                    <a href="#" >MY PORTFOLIO</a><br/>
+                    <a href="gallery.html" >GALLERY</a>
+                </div>
+            </div>
             <a href="blog.html" class="menuLinks">
                 BLOG
             </a>
@@ -64,18 +68,21 @@
             <a href="#" class="menuLinks">
                 FEATURES
             </a>
-            <a href="#" class="menuLinks">
-                MEGA MENU
-            </a>
+            <div class="menuLinks dropdown">
+                TIMEOUT
+                <div class="dropdown-content">
+                    <a href="timeout.html" >RUN TIMEOUT</a>
+                </div>
+            </div>
             <a href="contact.html" class="menuLinks">
                 CONTACT
             </a>
-            <a href="#">
-                <div class="search">
-                    <input class="topHeaderInput" type="text" name="search"><br>
+            <div class="search">
+                <div class="searchWrapper">
+                    <input class="topHeaderInput" type="text" name="search">
                     <img src="images/search.png" class="searchImg">
                 </div>
-            </a>
+            </div>
         </nav>
 </header>
 </html>

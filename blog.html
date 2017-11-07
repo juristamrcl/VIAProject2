@@ -2,22 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
 
-    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
-
     <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
     <script type="text/javascript" src="scripts/load.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="styles/main.css">
 
     <script>
         $(document).ready(function(){
-            showBlogSlides(slideIndex);
+            showSlides(slideIndex, 'blogDot');
             loadPoint();
+            document.getElementsByClassName("arrowUpImg")[1].style.display = "none";
+            setTimeout(loadPoint, 1000)
         });
         $(window).resize(function() {
             loadPoint();
@@ -34,43 +35,45 @@
 <body>
     <div class="blogBody">
         <div class="popularPosts materialCard">
-            <div class="popularPostTexts">
+            <div onclick="hideCarousel()" class="popularPostTexts">
                 <div class="popularPostsTopText blueFont">
                     POPULAR POSTS
                 </div>
                 <img src="images/arrow_up.png" class="arrowUpImg">
+                <img src="images/arrow_down.png" class="arrowUpImg">
             </div>
-            <div class="blog-slideshow-container">
+            <div id="blog-slideshow-container">
                 <div class="mySlides fade">
-                    <img src="images/pres3.png" class="blogCarouselImg">
-                    <img src="images/pres4.png" class="blogCarouselImg">
-                    <img src="images/pres1.png" class="blogCarouselImg">
-                    <img src="images/pres2.png" class="blogCarouselImg">
+                    <img src="images/sceneries/pres3.jpg" class="blogCarouselImg">
+                    <img src="images/sceneries/pres4.jpeg" class="blogCarouselImg">
+                    <img src="images/sceneries/pres1.jpeg" class="blogCarouselImg">
+                    <img src="images/sceneries/pres2.jpeg" class="blogCarouselImg">
                 </div>
 
                 <div class="mySlides fade">
-                    <img src="images/pres2.png" class="blogCarouselImg">
-                    <img src="images/pres3.png" class="blogCarouselImg">
-                    <img src="images/pres1.png" class="blogCarouselImg">
-                    <img src="images/pres4.png" class="blogCarouselImg">
+                    <img src="images/sceneries/scenery2.jpg" class="blogCarouselImg">
+                    <img src="images/sceneries/scenery1.jpeg" class="blogCarouselImg">
+                    <img src="images/sceneries/scenery3.jpeg" class="blogCarouselImg">
+                    <img src="images/sceneries/scenery4.jpg" class="blogCarouselImg">
                 </div>
             </div>
 
-            <div class="blogDots">
-                <span class="blogDot" onclick="currentBlogSlide(1)"></span>
-                <span class="blogDot" onclick="currentBlogSlide(2)"></span>
+            <div id="blogDots">
+                <span class="blogDot" onclick="currentSlide(1, 'blogDot')"></span>
+                <span class="blogDot" onclick="currentSlide(2, 'blogDot')"></span>
             </div>
         </div>
 
         <div class="blogContentIcons">
             <img src="images/grey_line_240.png" class="lineIcon">
-            <img src="images/behance.png" class="contentIcon">
-            <img src="images/behance.png" class="contentIcon">
-            <img src="images/behance.png" class="contentIcon">
-            <img src="images/behance.png" class="contentIcon">
-            <img src="images/behance.png" class="contentIcon">
-            <img src="images/behance.png" class="contentIcon">
-            <img src="images/behance.png" class="contentIcon">
+            <img src="images/dashboard.png" class="contentIcon">
+            <img src="images/edit.png" class="contentIcon">
+            <img src="images/photo.png" class="contentIcon">
+            <img src="images/gallery.png" class="contentIcon">
+            <img src="images/movie.png" class="contentIcon">
+            <img src="images/music.png" class="contentIcon">
+            <img src="images/quote.png" class="contentIcon">
+            <img src="images/crop.png" class="contentIcon">
             <img src="images/grey_line_240.png" class="lineIcon">
         </div>
 
@@ -88,7 +91,7 @@
                         </div>
                     </div>
                     <div class="typeCircle">
-                        <img src="images/gplus.png" class="typeCircleImgSize">
+                        <img src="images/gallery_green.png" class="typeCircleImgSize">
                     </div>
 
                     <div id="wrapper1"></div>
@@ -102,7 +105,7 @@
                         </div>
                     </div>
                     <div class="typeCircle">
-                        <img src="images/gplus.png" class="typeCircleImgSize">
+                        <img src="images/quote_green.png" class="typeCircleImgSize">
                     </div>
 
                     <div id="wrapper2"></div>
@@ -116,7 +119,7 @@
                         </div>
                     </div>
                     <div class="typeCircle">
-                        <img src="images/gplus.png" class="typeCircleImgSize">
+                        <img src="images/edit_green.png" class="typeCircleImgSize">
                     </div>
 
                     <div id="wrapper3"></div>
@@ -130,7 +133,7 @@
                         </div>
                     </div>
                     <div class="typeCircle">
-                        <img src="images/gplus.png" class="typeCircleImgSize">
+                        <img src="images/photo_green.png" class="typeCircleImgSize">
                     </div>
 
                     <div id="wrapper4"></div>
@@ -144,7 +147,7 @@
                         </div>
                     </div>
                     <div class="typeCircle">
-                        <img src="images/gplus.png" class="typeCircleImgSize">
+                        <img src="images/movie_green.png" class="typeCircleImgSize">
                     </div>
 
                     <div id="wrapper5"></div>
@@ -158,22 +161,22 @@
                         </div>
                     </div>
                     <div class="typeCircle">
-                        <img src="images/gplus.png" class="typeCircleImgSize">
+                        <img src="images/music_green.png" class="typeCircleImgSize">
                     </div>
 
                 </div>
                 <div class="rightTimeLine">
-
                     <div id="card1" class="blogCard materialCard">
-                        <img src="images/pres1.png" class="blogCardImg">
+                        <img src="images/sceneries/pres5.jpeg" class="blogCardImg">
                         <div class="blogCardHeader blueFont">
-                            What a beautiful scenery
+                            Hey nature, wake up!
                         </div>
                         <div class="blogCardSocial blueFont">
-                            Identity, Graphics design | <img src="images/mail.png" class="socialCardImage"> 24 Comments |<img src="images/mail.png" class="socialCardImage"> 4 Likes
+                            Photography, Woman, Feeling, Graphics design | <img src="images/mail.png" class="socialCardImage"> 24 Comments |<img src="images/mail.png" class="socialCardImage"> 4 Likes
                         </div>
                         <div class="blogCardSubHeader blueFont">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            Oh yea! It is here! Part of the year, when the nature wakes up and starts to shine with every shade of green. What about putting this feeling into somethin durable.
+                            An what about putting it togenther with a beautiful woman? The perfect combination of smallest details of every moment. Read more inside the post...
                         </div>
                         <a href="#" type="button" class="blogButton">Read More</a>
                     </div>
@@ -181,13 +184,13 @@
                     <div id="card2" class="quotesCard">
                         <div class="quotesOverlay">
                             <div class="quotesTopText">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.
+                                No place is boring if you´ve had a good night´s sleep and have a pocket full of unexposed film.
                             </div>
                             <div class="postQuote">
                                 <div class="quotesAuthor">
-                                    <img src="images/white_line_30.png">
-                                    Aegon Targaryen
-                                    <img src="images/white_line_30.png">
+                                    <img src="images/white_line_30.png" class="quoteImgLine">
+                                    Robert Adams
+                                    <img src="images/white_line_30.png" class="quoteImgLine">
                                 </div>
                                 <img src="images/quote_white.png" class="quoteImg">
                             </div>
@@ -196,42 +199,43 @@
 
                     <div id="card3" class="blogCard materialCard">
                         <div class="blogCardHeader blueFont">
-                            What a beautiful scenery
+                            Want to start your own photography blog?
                         </div>
                         <div class="blogCardSocial blueFont">
-                            Identity, Graphics design | <img src="images/mail.png" class="socialCardImage"> 24 Comments |<img src="images/mail.png" class="socialCardImage"> 4 Likes
+                            Portfolio, Photography, Start, #yourownblog | <img src="images/mail.png" class="socialCardImage"> 24 Comments |<img src="images/mail.png" class="socialCardImage"> 4 Likes
                         </div>
                         <div class="blogCardSubHeader blueFont">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                           Is a photography your passion? You are not alone. If you think about creating your own portofilio, you are on the right place. Do not just dream anymore.
+                            Whether you are ready or not, we will help you, not to lose on our pages. Just take your best photos, place it on your blog and the whole new era of your life can begin.
                         </div>
                         <a href="#" type="button" class="blogButton">Read More</a>
                     </div>
 
                     <div id="card4" class="blogCard materialCard">
-                        <img src="images/pres1.png" class="blogCardImg">
+                        <img src="images/sceneries/pres6.jpeg" class="blogCardImg">
                         <div class="blogCardHeader blueFont">
-                            What a beautiful scenery
+                            Cold is beautiful!
                         </div>
                         <div class="blogCardSocial blueFont">
-                            Identity, Graphics design | <img src="images/mail.png" class="socialCardImage"> 24 Comments |<img src="images/mail.png" class="socialCardImage"> 4 Likes
+                            Winter, Snow, Woman, Cold | <img src="images/mail.png" class="socialCardImage"> 24 Comments |<img src="images/mail.png" class="socialCardImage"> 4 Likes
                         </div>
                         <div class="blogCardSubHeader blueFont">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            No words needed. Just chill and enjoy this beautiful woman.
+
                         </div>
                         <a href="#" type="button" class="blogButton">Read More</a>
                     </div>
 
                     <div id="card5" class="blogCard materialCard">
-                        <iframe src="https://player.vimeo.com/video/240289181" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                        <p><a href="https://vimeo.com/240289181"></a></p>
+                        <iframe src="https://player.vimeo.com/video/77910096" width="100%" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         <div class="blogCardHeader blueFont">
-                            What a beautiful scenery
+                            Out of ideas?
                         </div>
                         <div class="blogCardSocial blueFont">
-                            Identity, Graphics design | <img src="images/mail.png" class="socialCardImage"> 24 Comments |<img src="images/mail.png" class="socialCardImage"> 4 Likes
+                            Video, Motivation, #outofideas | <img src="images/mail.png" class="socialCardImage"> 24 Comments |<img src="images/mail.png" class="socialCardImage"> 4 Likes
                         </div>
                         <div class="blogCardSubHeader blueFont">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                             Watch this video an take some inspiration.
                         </div>
                         <a href="#" type="button" class="blogButton">Read More</a>
                     </div>
@@ -239,13 +243,14 @@
                     <div id="card6" class="blogCard materialCard">
                         <iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/336620437&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
                         <div class="blogCardHeader blueFont">
-                            What a beautiful scenery
+                            Music is important
                         </div>
                         <div class="blogCardSocial blueFont">
-                            Identity, Graphics design | <img src="images/mail.png" class="socialCardImage"> 24 Comments |<img src="images/mail.png" class="socialCardImage"> 4 Likes
+                            Music, Chill, Energy, Creativity | <img src="images/mail.png" class="socialCardImage"> 24 Comments |<img src="images/mail.png" class="socialCardImage"> 4 Likes
                         </div>
                         <div class="blogCardSubHeader blueFont">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            Every one has som blank spaces, when you feel bad and you have absolutely no motivation to be creative. When this happens to you, you should
+                            do things, that makes you happy, not things you have to do. Jus lay down, play some music and chill. Another day full of opportunities is close.
                         </div>
                         <a href="#" type="button" class="blogButton">Read More</a>
                     </div>
@@ -257,16 +262,16 @@
                         Random Posts
                     </div>
                     <div class="blogRandomPostWrapper">
-                        <img src="images/pres1.png" class="blogRandomPostsImage">
-                        <img src="images/pres1.png" class="blogRandomPostsImage">
+                        <img src="images/sceneries/scenery5.jpeg" class="blogRandomPostsImage">
+                        <img src="images/sceneries/scenery6.jpeg" class="blogRandomPostsImage">
                     </div>
                     <div class="blogRandomPostWrapper">
-                        <img src="images/pres1.png" class="blogRandomPostsImage">
-                        <img src="images/pres1.png" class="blogRandomPostsImage">
+                        <img src="images/sceneries/scenery7.jpeg" class="blogRandomPostsImage">
+                        <img src="images/sceneries/scenery8.jpeg" class="blogRandomPostsImage">
                     </div>
                     <div class="blogRandomPostWrapper">
-                        <img src="images/pres1.png" class="blogRandomPostsImage">
-                        <img src="images/pres1.png" class="blogRandomPostsImage">
+                        <img src="images/sceneries/scenery9.jpeg" class="blogRandomPostsImage">
+                        <img src="images/sceneries/scenery4.jpg" class="blogRandomPostsImage">
                     </div>
                 </div>
 
@@ -280,42 +285,43 @@
                 <div class="blogSidePost">
                     Categories
                     <ul style="list-style-type:circle" class="categoriesListUl">
-                        <li><a href="#" class="categoriesList">Coffee</a></li>
-                        <li><a href="#" class="categoriesList">Coffee</a></li>
-                        <li><a href="#" class="categoriesList">Coffee</a></li>
-                        <li><a href="#" class="categoriesList">Coffee</a></li>
-                        <li><a href="#" class="categoriesList">Coffee</a></li>
-                        <li><a href="#" class="categoriesList">Coffee</a></li>
-                        <li><a href="#" class="categoriesList">Coffee</a></li>
+                        <li><a href="#" class="categoriesList">Scenery</a></li>
+                        <li><a href="#" class="categoriesList">People</a></li>
+                        <li><a href="#" class="categoriesList">Mountains</a></li>
+                        <li><a href="#" class="categoriesList">Nature</a></li>
+                        <li><a href="#" class="categoriesList">Water</a></li>
+                        <li><a href="#" class="categoriesList">Beauty</a></li>
+                        <li><a href="#" class="categoriesList">Animals</a></li>
                     </ul>
                 </div>
 
                 <div class="blogSidePost">
                     Archives
                     <ul style="list-style-type:circle" class="categoriesListUl">
-                        <li><a href="#" class="categoriesList">Coffee</a></li>
-                        <li><a href="#" class="categoriesList">Coffee</a></li>
-                        <li><a href="#" class="categoriesList">Coffee</a></li>
-                        <li><a href="#" class="categoriesList">Coffee</a></li>
-                        <li><a href="#" class="categoriesList">Coffee</a></li>
-                        <li><a href="#" class="categoriesList">Coffee</a></li>
-                        <li><a href="#" class="categoriesList">Coffee</a></li>
+                        <li><a href="#" class="categoriesList">November 2017</a></li>
+                        <li><a href="#" class="categoriesList">September 2017</a></li>
+                        <li><a href="#" class="categoriesList">August 2017</a></li>
+                        <li><a href="#" class="categoriesList">July 2017</a></li>
+                        <li><a href="#" class="categoriesList">Janueary 2017</a></li>
+                        <li><a href="#" class="categoriesList">December 2016</a></li>
+                        <li><a href="#" class="categoriesList">October 2016</a></li>
                     </ul>
                 </div>
-                <a href="#" class="all blueFont">
+                <div class="all blueFont">
                     All archives
-                    <img src="images/arrow_right_blue.png" class="allArrow">
-                </a>
+                    <a href="index.html" class="allArrow"><img src="images/arrow_right_blue.png" class="allArrow"></a>
+
+                </div>
 
                 <div class="blogSidePost">
                     Featured
                     <div class="blogSideCard materialCard">
-                        <img src="images/pres1.png" class="blogCardImg">
+                        <img src="images/sceneries/scenery2.jpg" class="blogCardImg">
                         <div class="blogCardardTopText blueFont">
-                            Just dashboard
+                            Fog in the mountains
                         </div>
                         <div class="blogCardSubText blueFont">
-                            And subtext
+                            Beautiful photos on early wake-ups
                         </div>
                     </div>
                 </div>
@@ -323,31 +329,31 @@
                 <div class="blogSidePost">
                     Custom Text
                     <div class="blogSideCustomText">
-                        This is emotional text. Please, if you read it, go to facebook, click on our page GYMIFY.io an give us a LIKE, thank you so much!
+                        Photography is not just about taking pictures. It is about all the emotions coming trought your body when you are pushing the trigger of your camera.
                     </div>
                     <div class="blogSideCustomText">
-                        Really! Go there and give us LIKE. Thank you again.
+                        Live with your camera, do not just take pictures. Take emotions
                     </div>
                 </div>
-                <a href="index.html" class="all blueFont">
+                <div class="all blueFont">
                     Check out more
-                    <img src="images/arrow_right_blue.png" class="allArrow">
-                </a>
+                    <a href="index.html" class="allArrow"><img class="allArrow" src="images/arrow_right_blue.png"></a>
+                </div>
 
                 <div class="blogSidePost sideMenuEnd">
                     Tags
                     <div class="blogSideCustomText">
-                        <div class="smallTag">fitness</div>
-                        <div class="mediumTag">coding</div>
-                        <div class="largeTag">online</div>
-                        <div class="smallTag">trainer</div>
-                        <div class="mediumTag">online</div>
-                        <div class="largeTag">iad</div>
-                        <div class="smallTag">random</div>
-                        <div class="largeTag">offline</div>
-                        <div class="smallTag">trainer</div>
-                        <div class="mediumTag">online</div>
-                        <div class="smallTag">ide</div>
+                        <div class="smallTag">photography</div>
+                        <div class="mediumTag">snow</div>
+                        <div class="largeTag">woman</div>
+                        <div class="smallTag">music</div>
+                        <div class="mediumTag">portfolio</div>
+                        <div class="largeTag">winter</div>
+                        <div class="smallTag">start</div>
+                        <div class="smallTag">cold</div>
+                        <div class="mediumTag">feeling</div>
+                        <div class="smallTag">creativity</div>
+                        <div class="largeTag">motivation</div>
                     </div>
                 </div>
 
